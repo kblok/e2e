@@ -375,6 +375,7 @@ void screen.getByRole('image').tap({ position: point, timeout: 1_000 });
 const rangeKeys: readonly KeyModifier[] = ['Shift', 'ControlOrMeta'];
 void screen.getByRole('row').click({ modifiers: rangeKeys });
 void screen.getByRole('row').secondaryTap({ modifiers: ['Alt'] });
+void screen.getByRole('row').dblclick({ modifiers: ['Shift'], timeout: 1_000 });
 // @ts-expect-error modifiers are the key grammar's modifier names
 void screen.getByRole('row').doubleTap({ modifiers: ['Hyper'] });
 void screen.getByRole('image').click({ position: point });

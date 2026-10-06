@@ -365,7 +365,7 @@ export interface ActionOptions {
  */
 export type Point = ViewportPoint;
 
-/** `tap`, `click`, `doubleTap`, and `secondaryTap` options: the action timeout and the keys held for the click. */
+/** `tap`, `click`, `doubleTap`, `dblclick`, and `secondaryTap` options: the action timeout and the keys held for the click. */
 export interface ClickOptions extends ActionOptions {
   /**
    * Keys held while the pointer clicks, as a Shift-click extends a selection:
@@ -460,6 +460,8 @@ export interface Locator extends Screen {
   click(options?: TapOptions): Promise<void>;
   /** Double-taps exactly one matching actionable node. */
   doubleTap(options?: ClickOptions): Promise<void>;
+  /** Alias of doubleTap. */
+  dblclick(options?: ClickOptions): Promise<void>;
   /** Secondary-taps exactly one matching actionable node: a right click, a two-finger tap. */
   secondaryTap(options?: ClickOptions): Promise<void>;
   /** Long-presses exactly one matching actionable node. */
